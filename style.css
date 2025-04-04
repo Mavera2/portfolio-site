@@ -1,0 +1,248 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6a11cb;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #ff7f50;
+  transform: scale(1.1);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #6a11cb;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #ff7f50;
+  transform: translateY(-2px);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #6a11cb;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.scrolled header {
+  background: rgba(106, 17, 203, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scrolled .navbar-logo,
+.scrolled .navbar-links a {
+  color: white;
+}
+
+.scrolled .navbar-links a:hover {
+  color: #ff7f50;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: #333;
+  text-align: center;
+}
+
+.hakkimda-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profil-foto {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #6a11cb;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profil-foto:hover {
+  transform: scale(1.1);
+  border-color: #ff7f50;
+}
+
+.hakkimda-text p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.egitim-item,
+.deneyim-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-left: 4px solid #6a11cb;
+  border-radius: 4px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.egitim-item:hover,
+.deneyim-item:hover {
+  transform: translateY(-5px);
+  background: #e9ecef;
+}
+
+.yetenekler ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.yetenekler li {
+  background: #6a11cb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.yetenekler li:hover {
+  background: #ff7f50;
+  transform: scale(1.1);
+}
+
+.proje-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proje-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.proje-item a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.proje-item a:hover {
+  color: #ff7f50;
+}
+
+.iletisim ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.iletisim a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.iletisim a:hover {
+  color: #ff7f50;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #6a11cb;
+  color: white;
+  margin-top: 2rem;
+}
+
+.footer p {
+  font-size: 1rem;
+}
